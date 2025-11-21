@@ -88,3 +88,10 @@ do {
           printf("\nPressione enter para continuar...");
           getchar();
           break;
+        }
+
+} while (opcao != 3);
+return 0;
+
+}
+
