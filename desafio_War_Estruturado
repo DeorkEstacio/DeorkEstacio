@@ -14,3 +14,8 @@ struct Territorio {
   int quantidade_tropas;
   
 };
+
+void limparBufferentrada () {
+  int c;
+  while ((c = getchar()) != '\n' &&  c != EOF); 
+}
