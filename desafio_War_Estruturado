@@ -24,3 +24,5 @@ int main() {
   struct Territorio territorios [MAX_TERRITORIOS];
   int totalTerritorios = 0;
   int opcao;
+
+do {  
