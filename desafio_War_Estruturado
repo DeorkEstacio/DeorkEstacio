@@ -6,3 +6,5 @@
 // Criando as constantes globais
 #define MAX_TERRITORIOS 5 
 #define TAM_STRING 30
+
+// definição da estrutura
