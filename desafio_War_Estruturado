@@ -8,3 +8,9 @@
 #define TAM_STRING 30
 
 // definição da estrutura
+struct Territorio {
+  char nome [TAM_STRING];
+  char cor_exercito [TAM_STRING];
+  int quantidade_tropas;
+  
+};
