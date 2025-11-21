@@ -38,3 +38,31 @@ do {
 
   scanf("%d", &opcao);
   limparBufferentrada(); 
+
+  switch (opcao){
+    case 1: //cadasto de território
+        printf("--- Cadastrando territorio %d ---\n", totalTerritorios + 1);
+        if (totalTerritorios < MAX_TERRITORIOS) {
+          printf("Digite o nome do territorio\n");
+          fgets(territorios[totalTerritorios].nome, TAM_STRING, stdin);
+
+          printf("Digite a cor do exercito\n");
+          fgets(territorios[totalTerritorios].cor_exercito, TAM_STRING, stdin);
+
+          territorios[totalTerritorios].nome[strcspn(territorios[totalTerritorios].nome, "\n")] = '\0';
+          territorios[totalTerritorios].cor_exercito[strcspn(territorios[totalTerritorios].cor_exercito, "\n")] = '\0';
+
+          printf("Digite a quantidade de tropas\n");
+          scanf("%d", &territorios[totalTerritorios].quantidade_tropas);
+          limparBufferentrada();
+
+          totalTerritorios++;
+
+          printf("\nTerritorio cadastrado com sucesso!\n");
+        } else {
+          printf("Não e possivel cadastrar mais territorios.");
+        }
+
+        printf("\nPressione enter para continuar...");
+        getchar(); // Pausa para o usuário ler a mensagem antes de voltar ao menu.
+        break;
