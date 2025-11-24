@@ -47,3 +47,10 @@ void inserirItem(Cadastro *cadastro) {
         printf("Erro: mochila cheia, nao e possivel inserir mais itens.\n");
         return;
     }
+
+    Item novo;
+    // Lê o nome
+    printf("\n--- Adicionar novo item ---\n");
+    printf("Nome do item: ");
+    fgets(novo.nome, sizeof(novo.nome), stdin);
+    novo.nome[strcspn(novo.nome, "\n")] = '\0'; // remove o \n
