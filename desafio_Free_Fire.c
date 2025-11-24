@@ -113,3 +113,47 @@ void removerItem(Cadastro *cadastro) {
     listarItens(cadastro);
 }
 
+// -------------------------
+// Função principal (menu)
+// -------------------------
+int main() {
+    Cadastro cadastro;
+    inicializarCadastro(&cadastro);
+
+    int opcao;
+    do {
+        // Exibe o menu com contador de itens
+        printf("====================================\n");
+        printf("   MOCHILA DE SOBREVIVENCIA - CODIGO DA ILHA\n");
+        printf("====================================\n");
+        printf("Itens na Mochila: %d/%d\n \n", cadastro.quantidade, MAX_ITENS);
+        printf("1. Adicionar Item (Loot)\n");
+        printf("2. Remover Item\n");
+        printf("3. Listar Itens na Mochila\n");
+        printf("0. Sair\n");
+        printf("Escolha uma opcao: ");
+        scanf("%d", &opcao);
+        getchar(); // limpar buffer
+
+        // Executa a opção escolhida
+        switch (opcao) {
+            case 1:
+                inserirItem(&cadastro);
+                break;
+            case 2:
+                removerItem(&cadastro);
+                break;
+            case 3:
+                listarItens(&cadastro);
+                break;
+            case 0:
+                printf("Saindo...\n");
+                break;
+            default:
+                printf("Opcao invalida!\n");
+        }
+    } while (opcao != 0);
+
+    return 0;
+}
+
