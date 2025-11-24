@@ -59,3 +59,8 @@ void inserirItem(Cadastro *cadastro) {
     printf("Tipo do item (arma, municao, cura, etc.): ");
     fgets(novo.tipo, sizeof(novo.tipo), stdin);
     novo.tipo[strcspn(novo.tipo, "\n")] = '\0';
+
+    // Lê a quantidade
+    printf("Quantidade: ");
+    scanf("%d", &novo.quantidade);
+    getchar(); // limpa o buffer
