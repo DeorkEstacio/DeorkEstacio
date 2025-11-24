@@ -64,3 +64,9 @@ void inserirItem(Cadastro *cadastro) {
     printf("Quantidade: ");
     scanf("%d", &novo.quantidade);
     getchar(); // limpa o buffer
+
+    // Adiciona ao vetor
+    cadastro->itens[cadastro->quantidade] = novo;
+    cadastro->quantidade++;
+
+    printf("Item inserido com sucesso!\n");
