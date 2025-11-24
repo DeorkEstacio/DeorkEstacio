@@ -74,3 +74,15 @@ void inserirItem(Cadastro *cadastro) {
         // Mostra os itens imediatamente após a inserção
     listarItens(cadastro);
 }
+
+// Remove um item pelo nome
+void removerItem(Cadastro *cadastro) {
+    if (cadastro->quantidade == 0) {
+        printf("Mochila vazia, nada a remover.\n");
+        return;
+    }
+
+    char nome[30];
+    printf("Digite o nome do item a remover: ");
+    fgets(nome, sizeof(nome), stdin);
+    nome[strcspn(nome, "\n")] = '\0';
