@@ -101,3 +101,15 @@ void removerItem(Cadastro *cadastro) {
         return;
     }
 
+    // Desloca os itens para preencher o espaço
+    for (int i = pos; i < cadastro->quantidade - 1; i++) {
+        cadastro->itens[i] = cadastro->itens[i + 1];
+    }
+    cadastro->quantidade--;
+
+    printf("Item \"%s\" removido com sucesso.\n", nome);
+
+    // Mostra os itens imediatamente após a remoção
+    listarItens(cadastro);
+}
+
