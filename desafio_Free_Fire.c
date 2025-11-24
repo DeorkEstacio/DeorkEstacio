@@ -17,3 +17,8 @@ typedef struct {
     Item itens[MAX_ITENS]; // vetor de itens
     int quantidade;        // contador de itens cadastrados
 } Cadastro;
+
+// Inicializa o cadastro, definindo quantidade como 0
+void inicializarCadastro(Cadastro *cadastro) {
+    cadastro->quantidade = 0;
+}
