@@ -70,3 +70,7 @@ void inserirItem(Cadastro *cadastro) {
     cadastro->quantidade++;
 
     printf("Item inserido com sucesso!\n");
+
+        // Mostra os itens imediatamente após a inserção
+    listarItens(cadastro);
+}
