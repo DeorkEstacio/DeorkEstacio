@@ -40,3 +40,10 @@ void listarItens(const Cadastro *cadastro) {
     }
     printf("------------------------\n");
 }
+
+// Insere um novo item na mochila
+void inserirItem(Cadastro *cadastro) {
+    if (cadastro->quantidade == MAX_ITENS) {
+        printf("Erro: mochila cheia, nao e possivel inserir mais itens.\n");
+        return;
+    }
