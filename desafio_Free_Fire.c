@@ -94,4 +94,10 @@ void removerItem(Cadastro *cadastro) {
             pos = i;
             break;
         }
+      }
+
+       if (pos == -1) {
+        printf("Item \"%s\" nao encontrado.\n", nome);
+        return;
     }
+
