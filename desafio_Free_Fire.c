@@ -22,3 +22,21 @@ typedef struct {
 void inicializarCadastro(Cadastro *cadastro) {
     cadastro->quantidade = 0;
 }
+
+// Lista todos os itens cadastrados
+void listarItens(const Cadastro *cadastro) {
+    if (cadastro->quantidade == 0) {
+        printf("Mochila vazia.\n");
+        return;
+    }
+
+    printf("\n--- ITENS NA MOCHILA ---\n");
+    for (int i = 0; i < cadastro->quantidade; i++) {
+        printf("%d. Nome: %s | Tipo: %s | Quantidade: %d\n",
+               i + 1,
+               cadastro->itens[i].nome,
+               cadastro->itens[i].tipo,
+               cadastro->itens[i].quantidade);
+    }
+    printf("------------------------\n");
+}
