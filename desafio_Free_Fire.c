@@ -86,3 +86,12 @@ void removerItem(Cadastro *cadastro) {
     printf("Digite o nome do item a remover: ");
     fgets(nome, sizeof(nome), stdin);
     nome[strcspn(nome, "\n")] = '\0';
+
+    int pos = -1;
+    // Procura o item pelo nome
+    for (int i = 0; i < cadastro->quantidade; i++) {
+        if (strcmp(cadastro->itens[i].nome, nome) == 0) {
+            pos = i;
+            break;
+        }
+    }
