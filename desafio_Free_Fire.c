@@ -11,3 +11,9 @@ typedef struct {
     char tipo[20];     // tipo do item (ex: alimento, ferramenta)
     int quantidade;    // quantidade do item
 } Item;
+
+// Estrutura que representa o cadastro (a mochila)
+typedef struct {
+    Item itens[MAX_ITENS]; // vetor de itens
+    int quantidade;        // contador de itens cadastrados
+} Cadastro;
