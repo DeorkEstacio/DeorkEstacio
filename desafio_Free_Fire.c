@@ -54,3 +54,8 @@ void inserirItem(Cadastro *cadastro) {
     printf("Nome do item: ");
     fgets(novo.nome, sizeof(novo.nome), stdin);
     novo.nome[strcspn(novo.nome, "\n")] = '\0'; // remove o \n
+
+    // Lê o tipo
+    printf("Tipo do item (arma, municao, cura, etc.): ");
+    fgets(novo.tipo, sizeof(novo.tipo), stdin);
+    novo.tipo[strcspn(novo.tipo, "\n")] = '\0';
