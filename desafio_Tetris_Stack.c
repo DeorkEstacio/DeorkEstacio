@@ -23,3 +23,8 @@ void inicializarFila(Fila *f) {
     f->fim = 0;
     f->total = 0;
 }
+
+// Verifica se a fila está cheia
+int filaCheia(Fila *f) {
+    return f->total == MAX;
+}
