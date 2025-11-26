@@ -33,3 +33,14 @@ int filaCheia(Fila *f) {
 int filaVazia(Fila *f) {
     return f->total == 0;
 }
+
+// Insere uma peça na fila
+void inserir(Fila *f, Peca p) {
+    if (filaCheia(f)) {
+        printf("Fila cheia. Não é possível inserir.\n");
+        return;
+    }
+    f->itens[f->fim] = p;
+    f->fim = (f->fim + 1) % MAX;
+    f->total++;
+}
