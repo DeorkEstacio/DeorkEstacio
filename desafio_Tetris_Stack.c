@@ -8,3 +8,11 @@ typedef struct {
     char tipo[2]; // 1 caractere + terminador nulo
     int id;
 } Peca;
+
+// Estrutura que representa a fila circular
+typedef struct {
+    Peca itens[MAX];
+    int inicio;
+    int fim;
+    int total;
+} Fila;
