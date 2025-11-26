@@ -70,3 +70,8 @@ void mostrarFila(Fila *f) {
     }
     printf("\n");
 }
+
+// Função principal com menu
+int main() {
+    Fila f;
+    inicializarFila(&f);
