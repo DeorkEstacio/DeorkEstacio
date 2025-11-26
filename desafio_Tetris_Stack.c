@@ -55,3 +55,18 @@ void remover(Fila *f, Peca *p) {
     f->inicio = (f->inicio + 1) % MAX;
     f->total--;
 }
+
+// Mostra todos os elementos da fila
+void mostrarFila(Fila *f) {
+    if (filaVazia(f)) {
+        printf("Fila vazia.\n");
+        return;
+    }
+    printf("Fila de pecas: ");
+    int idx = f->inicio;
+    for (int i = 0; i < f->total; i++) {
+        printf("[%s%d] ", f->itens[idx].tipo, f->itens[idx].id);
+        idx = (idx + 1) % MAX;
+    }
+    printf("\n");
+}
