@@ -28,3 +28,8 @@ void inicializarFila(Fila *f) {
 int filaCheia(Fila *f) {
     return f->total == MAX;
 }
+
+// Verifica se a fila está vazia
+int filaVazia(Fila *f) {
+    return f->total == 0;
+}
