@@ -44,3 +44,14 @@ void inserir(Fila *f, Peca p) {
     f->fim = (f->fim + 1) % MAX;
     f->total++;
 }
+
+// Remove uma peça da fila
+void remover(Fila *f, Peca *p) {
+    if (filaVazia(f)) {
+        printf("Fila vazia. Não é possível remover.\n");
+        return;
+    }
+    *p = f->itens[f->inicio];
+    f->inicio = (f->inicio + 1) % MAX;
+    f->total--;
+}
