@@ -75,3 +75,61 @@ void mostrarFila(Fila *f) {
 int main() {
     Fila f;
     inicializarFila(&f);
+
+    // Pré-carrega algumas peças
+    inserir(&f, (Peca){"T", 0});
+    inserir(&f, (Peca){"O", 1});
+    inserir(&f, (Peca){"L", 2});
+    inserir(&f, (Peca){"I", 3});
+    inserir(&f, (Peca){"I", 4});
+
+    int opcao;
+    int contadorID = 5; // próximo ID para novas peças
+
+    do {
+        mostrarFila(&f);
+        printf("1 - Jogar peca (dequeue)\n");
+        printf("2 - Inserir Nova Peca (enqueue)\n");
+        printf("0 - Sair\n");
+        printf("Escolha uma opcao: ");
+        scanf("%d", &opcao);
+        getchar(); // limpar buffer
+
+        switch (opcao) {
+            case 1: {
+                Peca removida;
+                remover(&f, &removida);
+                printf("Peca jogada: [%s%d]\n", removida.tipo, removida.id);
+                break;
+            }
+            case 2: {
+                char tipo[2];
+                printf("Digite o tipo da nova peca (1 caractere): ");
+                fgets(tipo, sizeof(tipo), stdin);
+                for (int i = 0; tipo[i] != '\0'; i++) {
+                  if (tipo[i] == '\n') {
+                  tipo[i] = '\0'; // substitui o '\n' por terminador de string
+                  break;          // sai do loop
+    }
+}
+
+                Peca nova = { "", contadorID++ };
+                int i = 0;
+                  while (tipo[i] != '\0') {   // percorre até o fim da string
+                  nova.tipo[i] = tipo[i]; // copia caractere
+                  i++;
+}
+nova.tipo[i] = '\0';        // garante o terminador nulo no final
+                inserir(&f, nova);
+                break;
+            }
+            case 0:
+                printf("Saindo...\n");
+                break;
+            default:
+                printf("Opção inválida!\n");
+        }
+    } while (opcao != 0);
+
+    return 0;
+}
