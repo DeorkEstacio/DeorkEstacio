@@ -63,3 +63,10 @@ void explorarMapa(No* inicio) {
         }
     }
 }
+
+int main() {
+    // Construção do mapa
+    No* hall = criarSala("Hall de Entrada");
+    No* sala = criarSala("Sala de Estar");
+    No* biblioteca = criarSala("Biblioteca");
+    No* quarto = criarSala("Quarto");
