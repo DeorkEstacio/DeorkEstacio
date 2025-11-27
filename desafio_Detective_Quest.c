@@ -21,3 +21,12 @@ No* criarSala(const char* nome) {
     novo->direita = NULL;
     return novo;
 }
+
+// Libera memória
+void liberar(No* raiz) {
+    if (raiz != NULL) {
+        liberar(raiz->esquerda);
+        liberar(raiz->direita);
+        free(raiz);
+    }
+}
