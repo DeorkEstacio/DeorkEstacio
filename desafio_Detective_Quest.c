@@ -70,3 +70,8 @@ int main() {
     No* sala = criarSala("Sala de Estar");
     No* biblioteca = criarSala("Biblioteca");
     No* quarto = criarSala("Quarto");
+
+        // Conexões do mapa
+    hall->esquerda = sala;
+    hall->direita = biblioteca;
+    sala->esquerda = quarto;
