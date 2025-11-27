@@ -75,3 +75,12 @@ int main() {
     hall->esquerda = sala;
     hall->direita = biblioteca;
     sala->esquerda = quarto;
+
+        // Início do jogo
+    explorarMapa(hall);
+
+    // Liberação de memória
+    liberar(hall);
+
+    return 0;
+}
