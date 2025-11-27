@@ -45,3 +45,21 @@ void explorarMapa(No* inicio) {
             printf("Nao ha mais caminhos a seguir.\n");
             break;
         }
+
+        // Menu mostra apenas direções
+        printf("Escolha seu caminho:\n");
+        if (atual->esquerda != NULL) printf("1 - Ir para a esquerda\n");
+        if (atual->direita != NULL) printf("2 - Ir para a direita\n");
+
+        printf("Opcao: ");
+        scanf("%d", &escolha);
+
+        if (escolha == 1 && atual->esquerda != NULL) {
+            atual = atual->esquerda;
+        } else if (escolha == 2 && atual->direita != NULL) {
+            atual = atual->direita;
+        } else {
+            printf("Caminho invalido!\n");
+        }
+    }
+}
