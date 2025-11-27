@@ -30,3 +30,18 @@ void liberar(No* raiz) {
         free(raiz);
     }
 }
+
+// Função principal de deslocamento
+void explorarMapa(No* inicio) {
+    No* atual = inicio;
+    int escolha;
+
+    while (1) {
+        // Sempre mostra o local atual
+        printf("\nVoce esta em: %s\n", atual->nome);
+
+        // Se não houver caminhos, fim do mapa
+        if (atual->esquerda == NULL && atual->direita == NULL) {
+            printf("Nao ha mais caminhos a seguir.\n");
+            break;
+        }
